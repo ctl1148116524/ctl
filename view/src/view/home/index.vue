@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-05 09:21:20
- * @LastEditTime: 2020-07-05 10:36:34
+ * @LastEditTime: 2020-07-05 12:30:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo\view\src\view\home\home.vue
@@ -14,6 +14,6 @@
 export default {};
 </script>
 
-<style src="./home.scss" lang="scss" scoped>
+<style src="./index.scss" lang="scss" scoped>
 
 </style>

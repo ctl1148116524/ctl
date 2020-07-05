@@ -1,17 +1,17 @@
 /*
  * @Author: your name
  * @Date: 2020-07-05 09:04:26
- * @LastEditTime: 2020-07-05 10:21:01
+ * @LastEditTime: 2020-07-05 12:32:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo\view\src\router\router.js
  */
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-var home = () => import( /* webpackChunkName:"view-home"*/ '../view/home/home.vue')
+var home = () => import( /* webpackChunkName:"view-home"*/ '../view/home/index.vue')
 
 function loadView1(view) {
-    return () => import( /* webpackChunkName:"view-[request]"*/ '../view/' + view + '/' + view + '.vue')
+    return () => import( /* webpackChunkName:"view-[request]"*/ '../view/' + view + '/index.vue')
 }
 
 var routes = [{
@@ -28,14 +28,6 @@ var routes = [{
         component: loadView1('page'),
         meta: {
             title: '子页面1'
-        }
-    },
-    {
-        path: '/jilong',
-        name: 'jilong',
-        component: loadView1('jilong'),
-        meta: {
-            title: '子页面2'
         }
     }
 ]
