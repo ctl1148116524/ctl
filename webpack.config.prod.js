@@ -8,6 +8,7 @@ const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin'); //引入清除文件插件
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin'); //去除moment 的其他语言版本
+const CompressionPlugin = require("compression-webpack-plugin") //开启gzip
 
 var name = 'dist' //view
 module.exports = {
@@ -176,6 +177,13 @@ module.exports = {
         new MomentLocalesPlugin({
             localesToKeep: ['zh-cn'],
         }), //清除出moment 的en以外的语言
+        new CompressionPlugin({ //开启gzip压缩
+            test: /\.(js|css|scss)(\?.*)?$/,
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            threshold: 10240, //10kb
+            minRatio: 0.8,
+        }),
         new HtmlWebpackPlugin({ // 打包输出HTML  
             title: '主页',
             minify: { // 压缩HTML文件
